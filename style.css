@@ -1,0 +1,433 @@
+:root {
+	--main-green: #93c553;
+	--nav-green: #7aa12c;
+	--secondary-green: #53691a;
+	--default-border-radius: 4px;
+}
+
+::-webkit-scrollbar {
+	width: 0;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+nav {
+	position: fixed;
+	display: grid;
+	width: 100%;
+	height: 50px;
+	background-color: var(--nav-green);
+	grid-template-columns: 70px auto;
+	align-content: center;
+}
+
+nav .logo-container {
+	position: relative;
+	display: inline-block;
+	width: 70px;
+	height: 100%;
+}
+
+nav .logo-container img {
+	position: relative;
+	display: block;
+	height: 35px;
+	width: 35px;
+	color: white;
+	margin: auto;
+}
+
+nav .searchbar {
+	position: relative;
+	display: grid;
+	width: auto;
+	height: 100%;
+	width: auto;
+	align-content: center;
+	grid-template-columns: 250px 30px;
+}
+
+nav .searchbar input,
+nav .searchbar button.search-btn {
+	position: relative;
+	display: block;
+	color: white;
+	background-color: var(--secondary-green);
+	border: none;
+	border-radius: var(--default-border-radius);
+	height: 30px;
+}
+
+nav .searchbar input {
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	width: 100%;
+	font-size: 12px;
+	padding-left: 16px;
+}
+
+nav .searchbar button.search-btn {
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	cursor: pointer;
+}
+
+aside {
+	display: block;
+	position: fixed;
+	top: 50px;
+	width: 70px;
+	height: 100%;
+	background-color: #efefef;
+	border-right: 1px solid #d7d7d7;
+}
+
+aside ul {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+aside li {
+	position: relative;
+	display: block;
+	height: 50px;
+	padding: auto;
+}
+
+aside li a {
+	position: relative;
+	display: block;
+	height: 50px;
+	padding: auto;
+	text-align: center;
+	color: #a1a1a1;
+	transition-duration: 0.2s;
+}
+
+aside li a:hover {
+	color: #515151;
+}
+
+aside li a i {
+	position: relative;
+	display: block;
+	top: 50%;
+	transform: translate(0, -50%);
+}
+
+main {
+	display: block;
+	position: relative;
+	top: 50px;
+	margin-left: 70px;
+}
+
+.share-search {
+	position: relative;
+	display: grid;
+	width: 100%;
+	height: 150px;
+	background-color: #efefef;
+	border-bottom: 1px solid #d7d7d7;
+}
+
+.share-search .btn-container {
+	position: relative;
+	display: grid;
+	width: 90%;
+	grid-template-columns: 7fr 1fr;
+	grid-column-gap: 5px;
+	margin: auto;
+	align-self: center;
+}
+
+.green-btn {
+	background-color: var(--main-green);
+	color: white;
+	border: 1px solid #d7d7d7;
+	height: 50px;
+	border-radius: var(--default-border-radius);
+	cursor: pointer;
+	font-size: 12px;
+	transition: 0.2s;
+}
+
+.green-btn:hover {
+	background-color: var(--secondary-green);
+	color: white;
+}
+
+.green-btn span {
+	position: relative;
+	padding-left: 16px;
+}
+
+.share-search .searchbar {
+	position: relative;
+	display: grid;
+	grid-template-columns: 9fr 1fr;
+}
+
+.share-search .searchbar .green-btn {
+	border-left: none;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+.share-search .searchbar input {
+	border-radius: var(--default-border-radius);
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	border: 1px solid #d7d7d7;
+	border-right: none;
+	padding-left: 20px;
+	font-size: 12px;
+}
+
+.company-listings {
+	position: relative;
+	display: block;
+	width: 90%;
+	margin: auto;
+	height: auto;
+}
+
+.company-listings .listing-table {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.listing-table-header,
+.company-list-item {
+	display: grid;
+	position: relative;
+	grid-template-columns: 8fr 16fr 1fr;
+	border-bottom: 1px solid #d7d7d7;
+}
+
+.listing-table-header {
+	height: 100px;
+}
+
+.listing-table-header h5 {
+	display: block;
+	position: relative;
+	align-self: flex-end;
+	padding-bottom: 10px;
+}
+
+.company-list-item {
+	padding: 20px 0;
+	font-size: 12px;
+}
+
+.company-extras {
+	text-align: center;
+	cursor: pointer;
+}
+
+.popover-info {
+	display: none;
+	grid-template-rows: 100px auto 60px;
+	position: absolute;
+	border: 1px solid #d7d7d7;
+	box-shadow: 2px 2px 10px #e1e1e1;
+	width: 400px;
+	height: 500px;
+	border-radius: var(--default-border-radius);
+	background-color: white;
+	z-index: 1000;
+	top: 90%;
+	margin-left: 12px;
+}
+
+.popover-info::before {
+	position: absolute;
+	content: "";
+	width: 12px;
+	height: 12px;
+	border-top: 1px solid #d7d7d7;
+	border-left: 1px solid #d7d7d7;
+	background-color: white;
+	transform: rotate(45deg);
+	z-index: 999;
+	top: -8px;
+	left: 20px;
+}
+
+.popover-info-header {
+	display: grid;
+	position: relative;
+	height: 100%;
+	width: 100%;
+	background-color: white;
+	border-bottom: 1px solid #d7d7d7;
+	padding: 20px;
+}
+
+.popover-info-header h3 {
+	color: var(--secondary-green);
+}
+
+.popover-info-header .searchbar {
+	position: relative;
+	display: grid;
+	width: 100%;
+	height: 40px;
+	grid-template-columns: auto 40px;
+	margin-top: 10px;
+}
+
+.popover-info-header .searchbar input,
+.popover-info-header .searchbar button {
+	position: relative;
+	display: block;
+	border: 1px solid #d7d7d7;
+	height: 40px;
+}
+
+.popover-info-header .searchbar input {
+	border-top-left-radius: 20px;
+	border-right: 0;
+	border-bottom-left-radius: 20px;
+	padding-left: 20px;
+}
+
+.popover-info-header .searchbar button {
+	border-top-right-radius: 20px;
+	border-left: 0;
+	border-bottom-right-radius: 20px;
+	background-color: white;
+}
+
+.popover-info-body {
+	display: grid;
+	position: relative;
+	background-color: #efefef;
+	overflow: scroll;
+	overflow-x: hidden;
+}
+
+.popover-info-body .popover-note {
+	display: grid;
+	position: relative;
+	background-color: white;
+	border-radius: var(--default-border-radius);
+	border: 1px solid #d7d7d7;
+	width: calc(100% - 40px);
+	height: auto;
+	margin: 10px auto;
+	padding: 12px 20px;
+	grid-template-columns: 9fr 1fr;
+}
+
+.popover-note ul {
+	display: grid;
+	position: relative;
+	grid-template-rows: repeat(3, 1fr);
+	width: 35px;
+	align-self: center;
+	justify-self: center;
+}
+
+.popover-note ul li {
+	text-align: center;
+}
+
+.popover-note ul li button {
+	position: relative;
+	display: block;
+	width: 30px;
+	height: 30px;
+	background-color: white;
+	border: 1px solid #d7d7d7;
+	cursor: pointer;
+	color: grey;
+	transition: 0.2s;
+}
+
+.popover-note ul li button:hover {
+	background-color: #d7d7d7;
+	color: black;
+}
+
+.popover-note ul li:first-child button {
+	border-top-left-radius: var(--default-border-radius);
+	border-top-right-radius: var(--default-border-radius);
+	border-bottom: none;
+}
+
+.popover-note ul li:last-child button {
+	border-top: none;
+	border-bottom-left-radius: var(--default-border-radius);
+	border-bottom-right-radius: var(--default-border-radius);
+}
+
+.popover-note div:first-child {
+	position: relative;
+	display: grid;
+	width: 90%;
+	grid-gap: 10px;
+}
+
+.popover-note div:first-child h5 {
+	color: #b1b1b1;
+}
+
+.popover-info-body .popover-note:first-child {
+	margin-top: 20px;
+}
+
+.popover-info-footer {
+	display: grid;
+	position: relative;
+	background-color: white;
+	grid-template-columns: repeat(2, 1fr);
+	padding: 0 20px;
+	grid-gap: 20px;
+	border-top: 1px solid #d7d7d7;
+	align-content: center;
+}
+
+.popover-info-footer button {
+	height: 40px;
+	cursor: pointer;
+}
+
+.company-status-link {
+	color: blue;
+	cursor: pointer;
+}
+
+input[name="company-listings"] {
+	display: none;
+}
+
+input[name="company-listings"]:checked + .popover-info {
+	display: grid;
+}
