@@ -32,33 +32,33 @@ a {
 	color: black;
 }
 
-nav {
+nav#searchbar-nav {
 	position: fixed;
 	display: grid;
 	width: 100%;
 	height: 50px;
 	background-color: var(--nav-green);
 	grid-template-columns: 70px auto;
-	align-content: center;
+	align-content: center; /*vertical centering*/
+	z-index: 10000;
 }
 
-nav .logo-container {
+nav#searchbar-nav .logo-container {
 	position: relative;
 	display: inline-block;
 	width: 70px;
 	height: 100%;
 }
 
-nav .logo-container img {
+nav#searchbar-nav .logo-container img {
 	position: relative;
 	display: block;
 	height: 35px;
 	width: 35px;
-	color: white;
-	margin: auto;
+	margin: auto; /*Horizontal centering*/
 }
 
-nav .searchbar {
+nav#searchbar-nav .searchbar {
 	position: relative;
 	display: grid;
 	width: auto;
@@ -68,8 +68,8 @@ nav .searchbar {
 	grid-template-columns: 250px 30px;
 }
 
-nav .searchbar input,
-nav .searchbar button.search-btn {
+nav#searchbar-nav .searchbar input,
+nav#searchbar-nav .searchbar button.search-btn {
 	position: relative;
 	display: block;
 	color: white;
@@ -79,7 +79,7 @@ nav .searchbar button.search-btn {
 	height: 30px;
 }
 
-nav .searchbar input {
+nav#searchbar-nav .searchbar input {
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 0;
 	width: 100%;
@@ -87,15 +87,15 @@ nav .searchbar input {
 	padding-left: 16px;
 }
 
-nav .searchbar button.search-btn {
+nav#searchbar-nav .searchbar button.search-btn {
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
 	cursor: pointer;
 }
 
-aside {
-	display: block;
+nav#navigations {
 	position: fixed;
+	display: block;
 	top: 50px;
 	width: 70px;
 	height: 100%;
@@ -103,35 +103,32 @@ aside {
 	border-right: 1px solid #d7d7d7;
 }
 
-aside ul {
+nav#navigations ul {
 	position: relative;
 	display: block;
 	width: 100%;
 	height: 100%;
 }
 
-aside li {
+nav#navigations li,
+nav#navigations li a {
 	position: relative;
 	display: block;
 	height: 50px;
 	padding: auto;
 }
 
-aside li a {
-	position: relative;
-	display: block;
-	height: 50px;
-	padding: auto;
+nav#navigations li a {
 	text-align: center;
 	color: #a1a1a1;
 	transition-duration: 0.2s;
 }
 
-aside li a:hover {
+nav#navigations li a:hover {
 	color: #515151;
 }
 
-aside li a i {
+nav#navigations li a i {
 	position: relative;
 	display: block;
 	top: 50%;
@@ -139,8 +136,8 @@ aside li a i {
 }
 
 main {
-	display: block;
 	position: relative;
+	display: block;
 	top: 50px;
 	margin-left: 70px;
 }
@@ -266,6 +263,7 @@ main {
 	margin-left: 12px;
 }
 
+/*Triangle of popover*/
 .popover-info::before {
 	position: absolute;
 	content: "";
@@ -281,8 +279,8 @@ main {
 }
 
 .popover-info-header {
-	display: grid;
 	position: relative;
+	display: grid;
 	height: 100%;
 	width: 100%;
 	background-color: white;
@@ -428,6 +426,7 @@ input[name="company-listings"] {
 	display: none;
 }
 
+/*When checked, popover appears*/
 input[name="company-listings"]:checked + .popover-info {
 	display: grid;
 }
